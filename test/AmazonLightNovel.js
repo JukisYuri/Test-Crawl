@@ -5,7 +5,6 @@ const formattedKindlePriceByUSD = kindlePriceElement ? kindlePriceElement.substr
 const paperbackPriceElement = document.querySelectorAll(".slot-price")[1]
 const formattedPaperbackPriceByUSD = paperbackPriceElement ? paperbackPriceElement.innerText.substring(1) + " USD" : "Paperback Price not found";
 const descriptionElement = document.querySelector(".a-expander-content.a-expander-partial-collapse-content");
-const description = descriptionElement ? descriptionElement.innerText.replace(/\n/g, "") : "Description not found";
 const asin = document.querySelectorAll("#detailBulletsWrapper_feature_div .a-list-item span")[1].innerText.trim();
 const publisherElement = document.querySelectorAll("#detailBullets_feature_div .a-list-item span")[3].innerText.trim();
 const publisher = publisherElement ? publisherElement.substring(0, publisherElement.indexOf("(")) : "Publisher not found"
@@ -17,7 +16,7 @@ const obj = {
         "author": author,
         "kindlePrice": formattedKindlePriceByUSD,
         "paperbackPrice": formattedPaperbackPriceByUSD,
-        "description": description,
+        "description": descriptionElement,
         "ASIN": asin,
         "publisher": publisher,
         "publisherDate": publicationDate
